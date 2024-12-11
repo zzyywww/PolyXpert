@@ -12,6 +12,7 @@ Download the model
 wget https://i.uestc.edu.cn/esm2_finetuning.zip
 unzip esm2_finetuning.zip
 ```
+**Note:** The unzipped esm2_finetuning folder must be in the same directory as the PolyXpert.py script."
 
 Usage:
 
