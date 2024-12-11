@@ -1,4 +1,4 @@
-# PolyXpert
+k# PolyXpert
 This is a sequence-based fine-tuned ESM-2 model, named PolyXpert, for predicting polyreactivity of therapeutic mAbs candidates.
 
 you can clone this repository locally:
@@ -7,6 +7,12 @@ git clone https://github.com/zzyywww/PolyXpert.git
 cd PolyXpert
 pip install -r requirements.txt --ignore-installed
 ```
+Download the model
+```
+wget https://i.uestc.edu.cn/esm2_finetuning.zip
+unzip esm2_finetuning.zip
+```
+
 Usage:
 
 ```
