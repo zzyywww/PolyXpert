@@ -9,9 +9,11 @@ pip install -r requirements.txt --ignore-installed
 ```
 Download the model
 ```
-wget https://i.uestc.edu.cn/esm2_finetuning.zip
-unzip esm2_finetuning.zip
+wget https://i.uestc.edu.cn/PolyXpert.zip
+unzip PolyXpert.zip
 ```
+If you are using a Windows system, you can copy the link and paste it into browser to download the file directly.
+
 **Note:** The unzipped esm2_finetuning folder must be in the same directory as the PolyXpert.py script."
 
 Usage:
