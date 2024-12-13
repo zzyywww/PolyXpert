@@ -66,8 +66,8 @@ def model_test(model, test_loader, device):
     return predictions
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-tokenizer = AutoTokenizer.from_pretrained('./esm2_finetuning')
-trained_model = AutoModelForSequenceClassification.from_pretrained('./esm2_finetuning', num_labels=2)
+tokenizer = AutoTokenizer.from_pretrained('./PolyXpert')
+trained_model = AutoModelForSequenceClassification.from_pretrained('./PolyXpert', num_labels=2)
 
 test = pd.read_csv(input,index_col=False,sep='\t')
 test_data = create_dataset(tokenizer, test)
