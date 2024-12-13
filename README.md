@@ -14,7 +14,7 @@ unzip PolyXpert.zip
 ```
 If you are using a Windows system, you can copy the link and paste it into browser to download the file directly.
 
-**Note:** The unzipped esm2_finetuning folder must be in the same directory as the PolyXpert.py script."
+**Note:** The unzipped PolyXpert folder must be in the same directory as the PolyXpert.py script."
 
 Usage:
 
