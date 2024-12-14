@@ -41,25 +41,21 @@ def model_test(model, test_loader, device):
     model.eval()
     with torch.no_grad():
         for batch in tqdm(test_loader):
-            # 直接从 batch 获取张量，不需要再次转换
             input_ids = batch['input_ids'].to(device)  
             attention_mask = batch['attention_mask'].to(device)  
-
-            #####################分类模型#####################
             # 预测
             outputs = model(input_ids=input_ids, attention_mask=attention_mask)  
 
-            logits = outputs.logits  # 如果输出是一个字典，访问 logits
+            logits = outputs.logits  
 
             proba = torch.softmax(logits, dim=1)
             pred_label = torch.argmax(proba, dim=1)
 
-            # 将 proba 的第 0 列、第 1 列和 label 保存到 predictions
-            for i in range(proba.size(0)):  # 遍历每个样本
+            for i in range(proba.size(0)): 
                 predictions.append({
-                    'proba_0': proba[i, 0].item(),  # 保存第0列的概率
-                    'proba_1': proba[i, 1].item(),  # 保存第1列的概率
-                    'pred_label':pred_label[i].item(), # 保存预测的标签
+                    'proba_0': proba[i, 0].item(),  
+                    'proba_1': proba[i, 1].item(), 
+                    'pred_label':pred_label[i].item(),
                 })
 
     predictions = pd.DataFrame(predictions)
