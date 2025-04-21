@@ -1,12 +1,38 @@
-# PolyXpert
-This is a sequence-based fine-tuned ESM-2 model, named PolyXpert, for predicting polyreactivity of therapeutic mAbs candidates.
+# PolyXpert：Sequence-Based Therapeutic Antibody Polyreactivity Prediction
+A fine-tuned ESM-2 model for predicting polyreactivity of  antibody candidates using scFv sequence data.
 
-you can clone this repository locally:
+Key Features
+Requires only heavy/light chain Fv sequences (no structural data)
+Achieves 0.9672 AUC on held-out test set
+
+Development environment
+Python 3.9.16
+CUDA Version: 12.2
+transformers version：4.26.1
+torch version：1.13.1
+
+data prepare
+Required columns in TXT file:
+Name: Unique sequence identifier (string)
+VH: Heavy chain Fv sequence (e.g. QVQLQESGGGVVQPGRSLRLSCAASGFTFSSYGMHWVRQAPGKGLEWVAVIWYDGSNKYYADSVKGRFTISRDNSRNTLYLQMNSLRGEDTAVYYCAKRGTGSSFYYFDYWGQGTLVTVSS	)
+VL: Light chain Fv sequence (e.g. EIVLTQSPSALSASVGDRVTITCRASQNIANYLNWYQQKPGKPPKLLIYVASNLPSGVPSRFSGSGSGTDFTLTISGLQPDDFATYYCQQSYTTPRTFGQGTKVDIK	)
+Example (example_seq.txt):
+   “`markdown
+   | Name | VH | VL |
+   | ——- | ——- | ——- |
+   | high-ployreactivity_1 | QVQLQESGGG... | EIVLTQSPSA... |
+   | low-ployreactivity_1 | QVQLVQSGGG... | EIVLTQSPSTV... |
+   “`
+Installation
+we recommend using the conda environment zand you can clone this repository locally:
 ```
+conda create -n polyxpert python=3.9
+conda activate polyxpert
 git clone https://github.com/zzyywww/PolyXpert.git 
 cd PolyXpert
 pip install -r requirements.txt --ignore-installed
 ```
+
 Download the model
 ```
 wget https://i.uestc.edu.cn/PolyXpert.zip
