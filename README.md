@@ -3,18 +3,25 @@ A fine-tuned ESM-2 model for predicting polyreactivity of  antibody candidates u
 
 ## Key Features:
 Requires only heavy/light chain Fv sequences (no structural data).
+
 Achieves 0.9672 AUC on held-out test set.
 
 ## Development environment:
 Python 3.9.16
+
 CUDA Version: 12.2
+
 transformers version：4.26.1
+
 torch version：1.13.1
 
 ## data prepare Example (example_seq.txt)
 Required columns in TXT file:
+
 Name: Unique sequence identifier (string)
+
 VH: Heavy chain Fv sequence (e.g. QVQLQESGGGVVQPGRSLRLSCAASGFTFSSYGMHWVRQAPGKGLEWVAVIWYDGSNKYYADSVKGRFTISRDNSRNTLYLQMNSLRGEDTAVYYCAKRGTGSSFYYFDYWGQGTLVTVSS)
+
 VL: Light chain Fv sequence (e.g. EIVLTQSPSALSASVGDRVTITCRASQNIANYLNWYQQKPGKPPKLLIYVASNLPSGVPSRFSGSGSGTDFTLTISGLQPDDFATYYCQQSYTTPRTFGQGTKVDIK)
 
 ## Installation
