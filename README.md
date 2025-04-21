@@ -1,29 +1,23 @@
 # PolyXpert：Sequence-Based Therapeutic Antibody Polyreactivity Prediction
 A fine-tuned ESM-2 model for predicting polyreactivity of  antibody candidates using scFv sequence data.
 
-Key Features
-Requires only heavy/light chain Fv sequences (no structural data)
-Achieves 0.9672 AUC on held-out test set
+## Key Features:
+Requires only heavy/light chain Fv sequences (no structural data).
+Achieves 0.9672 AUC on held-out test set.
 
-Development environment
+## Development environment:
 Python 3.9.16
 CUDA Version: 12.2
 transformers version：4.26.1
 torch version：1.13.1
 
-data prepare
+## data prepare Example (example_seq.txt)
 Required columns in TXT file:
 Name: Unique sequence identifier (string)
-VH: Heavy chain Fv sequence (e.g. QVQLQESGGGVVQPGRSLRLSCAASGFTFSSYGMHWVRQAPGKGLEWVAVIWYDGSNKYYADSVKGRFTISRDNSRNTLYLQMNSLRGEDTAVYYCAKRGTGSSFYYFDYWGQGTLVTVSS	)
-VL: Light chain Fv sequence (e.g. EIVLTQSPSALSASVGDRVTITCRASQNIANYLNWYQQKPGKPPKLLIYVASNLPSGVPSRFSGSGSGTDFTLTISGLQPDDFATYYCQQSYTTPRTFGQGTKVDIK	)
-Example (example_seq.txt):
-   “`markdown
-   | Name | VH | VL |
-   | ——- | ——- | ——- |
-   | high-ployreactivity_1 | QVQLQESGGG... | EIVLTQSPSA... |
-   | low-ployreactivity_1 | QVQLVQSGGG... | EIVLTQSPSTV... |
-   “`
-Installation
+VH: Heavy chain Fv sequence (e.g. QVQLQESGGGVVQPGRSLRLSCAASGFTFSSYGMHWVRQAPGKGLEWVAVIWYDGSNKYYADSVKGRFTISRDNSRNTLYLQMNSLRGEDTAVYYCAKRGTGSSFYYFDYWGQGTLVTVSS)
+VL: Light chain Fv sequence (e.g. EIVLTQSPSALSASVGDRVTITCRASQNIANYLNWYQQKPGKPPKLLIYVASNLPSGVPSRFSGSGSGTDFTLTISGLQPDDFATYYCQQSYTTPRTFGQGTKVDIK)
+
+## Installation
 we recommend using the conda environment zand you can clone this repository locally:
 ```
 conda create -n polyxpert python=3.9
@@ -33,7 +27,7 @@ cd PolyXpert
 pip install -r requirements.txt --ignore-installed
 ```
 
-Download the model
+## Download the model
 ```
 wget https://i.uestc.edu.cn/PolyXpert.zip
 unzip PolyXpert.zip
@@ -42,7 +36,7 @@ If you are using a Windows system, you can copy the link and paste it into brows
 
 **Note:** The unzipped PolyXpert folder must be in the same directory as the PolyXpert.py script."
 
-Usage:
+##Usage:
 
 ```
 python PolyXpert.py [inputfile]
@@ -50,7 +44,7 @@ python PolyXpert.py [inputfile]
 inputfile: sequence file, 'Name' column for **sequence id**, 'VH' column for heavy chain **Fv region** ,  'VL' column for light chain **Fv region** 
 The example of inputfile can be found in **./example/example_seq.txt**
 
-Example:
+## Example:
 ```
 python PolyXpert.py ./example/example_seq.txt
 ```
