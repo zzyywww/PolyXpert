@@ -60,3 +60,8 @@ The results will be saved in **results** folder automatically, or you can modify
 Paper describing this work has been published in Journal of Pharmaceutical Analysis.
 
 **Cited as**: Yuwei Zhou,Haoxiang Tang, Changchun Wu, Zixuan Zhang, Jinyi Wei, Rong Gong, Samarappuli Mudiyanselage Savini Gunarathne, Changcheng Xiang, Jian Huang.Enhancing polyreactivity prediction of preclinical antibodies through fine-tuned protein language models.Journal of Pharmaceutical Analysis, 2025,101448. DOI: 10.1016/j.jpha.2025.101448
+
+## License
+
+This project is licensed under the MIT License.
+
